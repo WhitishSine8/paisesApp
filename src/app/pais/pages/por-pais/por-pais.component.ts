@@ -15,9 +15,9 @@ export class PorPaisComponent {
   
   constructor( private paisService:PaisService ) { }
 
-  buscar() {
+  buscar(termino:string) {
     this.hayError = true;
-    console.log(this.termino);
+    this.termino = termino;
 
     this.paisService.buscarPais( this.termino ).subscribe( (paises) => {
       console.log(paises);
@@ -27,6 +27,10 @@ export class PorPaisComponent {
       this.hayError = false;
       this.paises = [];
     });
+  }
+
+  sugerencias(termino:string) {
+    this.hayError = false;
   }
 }
 //private apiUrl: string = 'https://restcountries.com/v2';
