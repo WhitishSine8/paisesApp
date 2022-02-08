@@ -5,8 +5,8 @@
     <div class="col">
         <app-pais-input (onEnter)="buscar( $event )" placeholder="Buscar país" (OnDebounce)="sugerencias($event)"></app-pais-input>
     </div>
-
     <hr>
+
     <div *ngIf="!hayError" class="alert alert-danger">
         No se encontró ningun resultado.
     </div>
